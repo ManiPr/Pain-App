@@ -15,14 +15,19 @@ window.addEventListener("load", () => {
     isPainting=false;
     ctx.beginPath()
   }
-  const draw=(e)=>{
-    return
-  }
+  const draw = (e) => {
+    if (!isPainting) {
+      return
+    }
 
-  ctx.linecap='round'
-  ctx.lineWidth=10
-  ctx.lineTo(e.clientX, e.clientY)
-  ctx.stroke()
+    ctx.lineCap = 'round'
+    ctx.lineWidth = 10
+    ctx.lineTo(e.clientX, e.clientY)
+    ctx.stroke()
+
+  };
+
+
   
 
   window.addEventListener("mousedown", startPainting);
